@@ -6,9 +6,14 @@ import java.util.Scanner;
 
 public class HospitalManagementSystem {
     //Ye values DB connect karne ke liye use hoti hain
-    private static final String url = "jdbc:mysql://localhost:3306/hospital";//sql workbench se path copy kiya
-    private static final String username = "root";//database ka nam
-    private static final String password = "shradha";
+    private static final String url =
+        "jdbc:mysql://localhost:3306/hospital";
+
+private static final String username =
+        System.getenv().getOrDefault("HOSPITAL_DB_USERNAME", "root");
+
+private static final String password =
+        System.getenv("HOSPITAL_DB_PASSWORD");
 
     public static void main(String[] args) {
         //drivers load krenge jo ki database k sath connect krne k liye neccesary h
